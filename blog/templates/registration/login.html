@@ -1,0 +1,56 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+    <div class="container-fluid px-3">
+        <div class="row">
+            <div class="col-md-4 col-lg-6 col-xl-7 d-none d-md-block">
+                <img class="w-100" src="{% static 'registration/images/bg.jpg' %}" width="800" height="533" alt="code studio" style="height: calc(100vh - 130px);">
+            </div>
+
+            <div class="col-md-8 col-lg-6 col-xl-5 d-flex align-items-center">
+                <div class="w-100 py-5 px-md-5 px-xl-6 position-relative">
+                    <form class="form-validate" method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+
+                        <fieldset>
+                            <legend class="mb-3">
+                                User Login
+                            </legend>
+
+                            {% if form.errors %}
+                                <div class="text-white p-3 bg-danger rounded mb-3">
+                                    Your username and password didn't match.
+                                    <br>
+                                    Please try again.
+                                </div>
+                            {% endif %}
+
+                            <div class="input-group mb-4">
+                                <label class="input-group-text" for="id_username" style="width: 105px;">Username</label>
+                                <input id="id_username" class="form-control" name="username" type="text"
+                                       placeholder="Enter your username" autofocus autocapitalize="none" autocomplete="username" maxlength="150" required>
+                            </div>
+
+                            <div class="input-group mb-4">
+                                <label class="input-group-text" for="id_password"
+                                       style="width: 105px;">Password</label>
+                                <input id="id_password" class="form-control" name="password" type="password"
+                                       placeholder="Enter your password" autocomplete="current-password" required
+                                       data-msg="Please enter your email">
+                            </div>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <button type="submit" class="btn btn-primary">
+                                    Login
+                                </button>
+                            </div>
+
+                            <input type="hidden" name="next" value="{{ next }}">
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
