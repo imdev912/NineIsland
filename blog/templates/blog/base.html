@@ -1,0 +1,77 @@
+{% spaceless %}
+    <!DOCTYPE html>
+
+    <html lang="en">
+        {% load static %}
+
+        <head>
+            {% block meta %}
+                <meta charset="UTF-8">
+                <meta http-equiv="X-UA-Compatible" content="IE=edge">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta name="description" content="{% block description %} blogging for everyone {% endblock description %}">
+                <meta name="robots" content="all,follow">
+                <meta name="author" content="@codestudio">
+            {% endblock meta %}
+
+            <title>
+                {% block title %}
+                    {{ "code studio | blogs" }}
+                {% endblock title %}
+            </title>
+
+            {% block page_meta %}
+            {% endblock page_meta %}
+
+            {% block bootstrap_css %}
+                <link rel="stylesheet" href="{% static 'bootstrap-5.2.2-dist/css/bootstrap.min.css' %}">
+            {% endblock bootstrap_css %}
+
+            <style>
+                .text-bg-error {
+                  color: #fff !important;
+                  background-color: RGBA(220, 53, 69, var(--bs-bg-opacity, 1)) !important;
+                }
+                .bg-error {
+                  --bs-bg-opacity: 1;
+                  background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
+                }
+            </style>
+
+            {% block head_css %}
+            {% endblock head_css %}
+        </head>
+
+        <body>
+            {% block navbar %}
+                {% include "blog/navbar.html" %}
+            {% endblock navbar %}
+
+            <header>
+                {% block header %}
+                {% endblock header %}
+            </header>
+
+            <div id="content" style="min-height: calc(100vh - 130px);">
+                {% block content %}
+                {% endblock content %}
+            </div>
+
+            <input type="hidden" id="csrf" value="{{csrf_token}}">
+
+            <footer>
+                {% block footer %}
+                    {% include "blog/footer.html" %}
+                {% endblock footer %}
+            </footer>
+
+            {% block bootstrap_js %}
+                <script defer src="{% static 'bootstrap-5.2.2-dist/js/bootstrap.bundle.min.js' %}"></script>
+            {% endblock bootstrap_js %}
+
+            {% block fontawesome %}
+                <script src="https://kit.fontawesome.com/d2e985d0e7.js" crossorigin="anonymous"></script>
+            {% endblock fontawesome %}
+        </body>
+    </html>
+{% endspaceless %}
