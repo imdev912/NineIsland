@@ -9,5 +9,11 @@ def list_view(request):
 
 
 def detail_view(request, slug):
-    context = {"slug": slug}
+    context = {}
+
+    try:
+        context['blog'] = Blog.objects.filter(slug=slug).first()
+    except Exception as e:
+        print(e)
+
     return render(request, "blog/detail/detail.html", context)
