@@ -1,10 +1,11 @@
 from django.shortcuts import render
-
+from blog.models import Blog
 # Create your views here.
 
 
 def list_view(request):
-    return render(request, "blog/list/list.html")
+    context = {'blogs': Blog.objects.all().order_by("-created")[:5]}
+    return render(request, "blog/list/list.html", context)
 
 
 def detail_view(request, slug):
