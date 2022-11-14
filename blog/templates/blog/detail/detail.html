@@ -1,5 +1,67 @@
-{% extends "blog/base.html" %}
+{% extends "blog/blog.html" %}
+
+{% block header %}
+    {% include "blog/detail/header.html" %}
+{% endblock header %}
 
 {% block content %}
-    <h1>{{ slug }} detail</h1>
+    <div class="container pt-4">
+        <div class="row">
+            <div class="col-12 col-md-9">
+                <p><span class="dropcap bg-dark text-white px-2">I</span> am newspaper up its enjoyment agreeable
+                    depending. Timed voice share led him to widen noisy young. At weddings believed laughing although
+                    the material does the exercise of. Up attempt offered ye civilly so sitting to. She new course gets
+                    living within Elinor joy. She rapturous suffering concealed. <i>Demesne far hearted suppose venture
+                        excited see had has.</i> Dependent on so extremely delivered by. Yet no jokes worse her why. Bed
+                    one supposing breakfast day fulfilled off depending questions. Whatever boy her exertion his
+                    extended. Ecstatic followed handsome drawings entirely Mrs one yet outweigh. Of acceptance
+                    insipidity remarkably is an invitation. </p>
+                <p>Warrant private blushes removed an in equally totally if. Delivered dejection necessary objection do
+                    Mr prevailed. Mr feeling does chiefly cordial in do. Water timed folly right aware if oh truth.
+                    Imprudence attachment him his for sympathize. Large above be to means. Dashwood does provide
+                    stronger is. <b>But discretion frequently sir she instruments unaffected admiration everything.</b>
+                    Meant balls it if up doubt small purse. Required his you put the outlived answered position. A
+                    pleasure exertion if believed provided to. All led out world this music while asked. Paid mind even
+                    sons does he door no. Attended overcame repeated it is perceived Marianne in. I think on style child
+                    of. Servants moreover in sensible it ye possible. Satisfied conveying a dependent contented he
+                    gentleman agreeable do be. Water timed folly right aware if oh truth. Imprudence attachment him his
+                    for sympathize. Large above be to means. Dashwood does provide stronger is. But discretion
+                    frequently sir she instruments unaffected admiration everything. Meant balls it if up doubt small
+                    purse. Required his you put the outlived answered position. <samp>This text is meant to be treated
+                        as sample output from a computer program.</samp> A pleasure exertion if believed provided to.
+                    All led out world this music while asked. Paid mind even sons does he door no. Attended overcame
+                    repeated it is perceived Marianne in. I think on style child of. Servants moreover in sensible it ye
+                    possible. </p>
+            </div>
+
+            <div class="col-3 d-none d-md-block">
+                <div data-sticky="" data-margin-top="80" data-sticky-for="991">
+                    <!-- Categories -->
+                    <div class="row g-2">
+                        <h5>Categories</h5>
+                        <div class="d-flex justify-content-between align-items-center bg-warning bg-opacity-15 rounded p-2 position-relative">
+                            <h6 class="m-0 text-warning">Photography</h6>
+                            <a href="#" class="badge bg-warning text-dark stretched-link">09</a>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center bg-info bg-opacity-10 rounded p-2 position-relative">
+                            <h6 class="m-0 text-info">Travel</h6>
+                            <a href="#" class="badge bg-info stretched-link">25</a>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center bg-danger bg-opacity-10 rounded p-2 position-relative">
+                            <h6 class="m-0 text-danger">Photography</h6>
+                            <a href="#" class="badge bg-danger stretched-link">75</a>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center bg-primary bg-opacity-10 rounded p-2 position-relative">
+                            <h6 class="m-0 text-primary">Covid-19</h6>
+                            <a href="#" class="badge bg-primary stretched-link">19</a>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center bg-success bg-opacity-10 rounded p-2 position-relative">
+                            <h6 class="m-0 text-success">Business</h6>
+                            <a href="#" class="badge bg-success stretched-link">35</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock content %}
